@@ -12,19 +12,19 @@
 
 <div class="container">
     <h2>Vertical (basic) form</h2>
-    <form action="{{route('admin.update', $member->id)}}" method="post">
+    <form action="{{ route('admin.update', $members->id) }}" method="post">
         @csrf
         <div class="form-group">
             <label for="name">Name:</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" value={{$member ->name}}> 
+            <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" value={{ $members ->name }}> 
         </div>
         <div class="form-group">
             <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" value={{$member -> email}}>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" value={{ $members -> email }}>
         </div>
         <div class="form-group">
             <label for="address">Address</label>
-            <input type="text" class="form-control" id="address" placeholder="Enter address" name="address" value={{$member ->address}}>
+            <input type="text" class="form-control" id="address" placeholder="Enter address" name="address" value={{ $members ->address }}>
         </div>
 
         <button type="submit" class="btn btn-default">Sua</button>

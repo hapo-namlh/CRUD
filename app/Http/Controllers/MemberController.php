@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Member;
+use App\Models\Member;
 
 class MemberController extends Controller
 {
@@ -23,7 +23,7 @@ class MemberController extends Controller
     {
         $data = $request->all();
         Member::create($data);
-        return redirect()->route('index');
+        return redirect()->route('admin.index');
     }
 
     public function edit($id)
@@ -36,13 +36,13 @@ class MemberController extends Controller
     {
         $data = $request->all();
         Member::findOrFail($id)->update($data);
-        return redirect()->route('index');
+        return redirect()->route('admin.index');
     }
 
     public function destroy($id)
     {
         $members = Member::findOrFail($id);
         $members->delete();
-        return redirect()->route('index');
+        return redirect()->route('admin.index');
     }
 }
