@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', 'MemberController@index')->name('index');
+    Route::get('/create', 'MemberController@create')->name('create');
+    Route::post('/', 'MemberController@store')->name('store');
+    Route::get('/{id}/edit', 'MemberController@edit')->name('edit');
+    Route::put('/{id}','MemberController@update')->name('update');
+    Route::delete('/{id}', 'MemberController@destroy')->name('destroy');
 });
