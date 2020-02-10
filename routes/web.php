@@ -11,15 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('list', 'MemberController@index');
 
-Route::get('add', 'MemberController@create');
-Route::post('add', 'MemberController@store');
+Route::get('/', 'MemberController@index')->name('index');
 
-Route::get('edit/{id}', 'MemberController@edit');
-Route::post('update/{id}','MemberController@update')->name('update_member');
+Route::get('/create', 'MemberController@create')->name('create');
+Route::post('/', 'MemberController@store')->name('store');
 
-Route::get('delete/{id}', 'MemberController@destroy');
+Route::get('/{id}/edit', 'MemberController@edit')->name('edit');
+Route::put('/{id}','MemberController@update')->name('update');
+
+Route::get('/{id}', 'MemberController@destroy')->name('destroy');

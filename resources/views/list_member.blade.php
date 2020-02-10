@@ -24,7 +24,7 @@
     </div>
     <div class="row">
         <div class="col-sm-3">
-            <a href="add">Add</a>
+            <a href="{{route('create')}}">Add</a>
         </div>
     </div>
     <table class="table table-bordered">
@@ -45,8 +45,8 @@
                 <td>{{$value->email}}</td>
                 <td>{{$value->address}}</td>
                 <td>
-                    <a href="edit/{{$value->id}}">Edit</a>
-                    <a href="delete/{{$value->id}}">Delete</a>
+                    <a href="{{route('edit',$value->id)}}">Edit</a>
+                    <a href="{{route('destroy',$value->id)}}">Delete</a>
                 </td>
 
             </tr>

@@ -12,11 +12,11 @@
 
 <div class="container">
     <h2>Vertical (basic) form</h2>
-    <form action="{{route('update_member',$member->id)}}" method="post">
+    <form action="{{route('update',$member->id)}}" method="post">
         @csrf
         <div class="form-group">
             <label for="name">Name:</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" value={{$member ->name}}> <!-- gia tri cua the input bang truong name cua user -->
+            <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" value={{$member ->name}}> 
         </div>
         <div class="form-group">
             <label for="email">Email:</label>

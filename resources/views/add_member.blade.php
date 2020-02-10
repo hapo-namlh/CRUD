@@ -12,27 +12,27 @@
 
 <div class="container">
   <h2>Vertical (basic) form</h2>
-  <form action="add" method="post">
+  <form action="{{route('store')}}" method="post">
     @csrf
     <div class="form-group">
       <label for="name">Name:</label>
       <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
       @if($errors -> has('name'))
-        <div class="alert alert-warning">{{$errors->first('name')}}</div>
+        <div class="alert alert-warning">{{ $errors->first('name') }}</div>
       @endif
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
       <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
       @if($errors -> has('email'))
-        <div class="alert alert-warning">{{$errors->first('email')}}</div>
+        <div class="alert alert-warning">{{ $errors->first('email') }}</div>
       @endif
     </div>
     <div class="form-group">
       <label for="address">Address:</label>
       <input type="text" class="form-control" id="pwd" placeholder="Enter address" name="address">
       @if($errors -> has('address'))
-        <div class="alert alert-warning">{{$errors->first('address')}}</div>
+        <div class="alert alert-warning">{{ $errors->first('address') }}</div>
       @endif
     </div>
 
