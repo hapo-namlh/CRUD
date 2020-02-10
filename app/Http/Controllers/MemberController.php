@@ -8,35 +8,41 @@ use App\Member;
 
 class MemberController extends Controller
 {
-    public function index() {
-        $member = Member::all();
-        return view('list_member',compact('member'));
+    public function index()
+    {
+        $members = Member::all();
+        return view('list_member', ['members' => $members]);
     }
     
-    public function create() {
+    public function create()
+    {
         return view('add_member');
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         $data = $request->all();
         Member::create($data);
         return redirect()->route('index');
     }
 
-    public function edit($id) {
-        $member = Member::findOrFail($id);
-        return view('edit_member',compact('member'));
+    public function edit($id)
+    {
+        $members = Member::findOrFail($id);
+        return view('edit_member', compact('members'));
     }
 
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id)
+    {
         $data = $request->all();
         Member::findOrFail($id)->update($data);
         return redirect()->route('index');
     }
 
-    public function destroy($id) {
-        $member = Member::findOrFail($id);
-        $member->delete();
+    public function destroy($id)
+    {
+        $members = Member::findOrFail($id);
+        $members->delete();
         return redirect()->route('index');
     }
 }

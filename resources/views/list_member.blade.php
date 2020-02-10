@@ -24,7 +24,7 @@
     </div>
     <div class="row">
         <div class="col-sm-3">
-            <a href="{{route('create')}}">Add</a>
+            <a href="{{route('admin.create')}}">Add</a>
         </div>
     </div>
     <table class="table table-bordered">
@@ -38,15 +38,15 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($member as $key => $value)
+        @foreach($members as $key => $value)
             <tr>
                 <td>{{$key+1}}</td>
                 <td>{{$value -> name}}</td>
                 <td>{{$value->email}}</td>
                 <td>{{$value->address}}</td>
                 <td>
-                    <a href="{{route('edit',$value->id)}}">Edit</a>
-                    <a href="{{route('destroy',$value->id)}}">Delete</a>
+                    <a href="{{route('admin.edit', $value->id)}}">Edit</a>
+                    <a href="{{route('admin.destroy', $value->id)}}">Delete</a>
                 </td>
 
             </tr>

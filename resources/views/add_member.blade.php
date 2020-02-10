@@ -12,7 +12,7 @@
 
 <div class="container">
   <h2>Vertical (basic) form</h2>
-  <form action="{{route('store')}}" method="post">
+  <form action="{{route('admin.store')}}" method="post">
     @csrf
     <div class="form-group">
       <label for="name">Name:</label>
